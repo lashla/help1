@@ -4,7 +4,7 @@ fun main() {
     val isAscending: Boolean = readLine()!! == "ascending"
     val list: MutableList<Int> = readLine()!!.split(' ').map { it.toInt() }.toMutableList()
 
-    val comparator: (Int, Int) -> Int = if (isAscending) {return min()} else {return max()}
+    val comparator: (Int, Int) -> Int = if (isAscending) {::min} else {::max}
 
     sort(list, comparator)
     list.forEach { e -> print("$e ") }
